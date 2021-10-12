@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { MessageType } from './Message.props'
 
 const MessageWrapper = styled.div`
   margin-bottom: 25px;
@@ -47,7 +48,8 @@ const Text = styled.div`
   font-style: italic;
 `
 
-const Message = ({ message: { displayName, text, photoURL }}) => {
+
+const Message = ({ message: { displayName, text, photoURL }}: MessageType): JSX.Element => {
 
   return (
     <MessageWrapper>

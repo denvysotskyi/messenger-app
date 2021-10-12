@@ -6,7 +6,7 @@ const LoaderWrapper = styled.div`
 const Indicator = styled.img`
 `
 
-const Loader = () => (
+const Loader = (): JSX.Element => (
   <LoaderWrapper>
     <Indicator src={loader}
                alt={'loader'}

@@ -22,7 +22,7 @@ const LoaderWrapper = styled.div`
   margin-top: 20px;
 `
 
-const App = () => {
+const App = (): JSX.Element => {
 
   const { auth } = useContext(FirebaseContext)
 
