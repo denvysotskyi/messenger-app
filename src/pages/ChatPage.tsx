@@ -87,9 +87,8 @@ const ChatPage = (): JSX.Element => {
         </LoaderWrapper>
         <MessageList>
           {
-            messages &&
-            messages.map((message, idx) => <Message message={message}
-                                                                                                 key={idx}
+            messages && messages.map((message, idx) => <Message message={message}
+                                                                                                             key={idx}
               />
             )
           }

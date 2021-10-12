@@ -15,10 +15,10 @@ const AppRouter = (): JSX.Element => {
         user
           ? <Switch>
             {
-              privateRoutes.map((route, index) => <Route path={route.path}
+              privateRoutes.map((route, idx) => <Route path={route.path}
                                                           component={route.component}
                                                           exact={route.exact}
-                                                          key={index}
+                                                          key={idx}
                 />
               )
             }
@@ -26,10 +26,10 @@ const AppRouter = (): JSX.Element => {
           </Switch>
           : <Switch>
             {
-              publicRoutes.map((route, index) => <Route path={route.path}
+              publicRoutes.map((route, idx) => <Route path={route.path}
                                                          component={route.component}
                                                          exact={route.exact}
-                                                         key={index}
+                                                         key={idx}
                 />
               )
             }

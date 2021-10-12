@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { FirebaseContext } from '../../context/context'
 
 const Nav = styled.nav`
+  margin-bottom: 20px;
 `
 const NavWrapper = styled.div`
 `
