@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useContext } from 'react'
-import { Context } from '../context/context'
+import { FirebaseContext } from '../context/context'
 
 const FormWrapper = styled.div`
   margin-top: 80px;
@@ -13,11 +13,11 @@ const ButtonWrapper = styled.div`
 const Button = styled(Link)`
 `
 
-const LoginPage = () => {
+const LoginPage = (): JSX.Element => {
 
-  const { auth, firebase } = useContext(Context)
+  const { auth, firebase } = useContext(FirebaseContext)
 
-  const login = async () => {
+  const login = async (): Promise<any> => {
     const provider = new firebase.auth.GoogleAuthProvider()
     await auth.signInWithPopup(provider)
   }
@@ -30,7 +30,6 @@ const LoginPage = () => {
                   onClick={login}
                   className={'btn waves-effect waves-light'}
                   type={'submit'}
-                  name={'action'}
           >
             Войти с помощью Google
             <i className={'material-icons right'}>

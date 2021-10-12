@@ -48,26 +48,22 @@ const Text = styled.div`
   font-style: italic;
 `
 
-
-const Message = ({ message: { displayName, text, photoURL }}: MessageType): JSX.Element => {
-
-  return (
-    <MessageWrapper>
-      <AvatarWrapper>
-        <Avatar src={photoURL}
-                alt={'avatar'}
-        />
-      </AvatarWrapper>
-      <TextWrapper>
-        <Name>
-          {displayName}:
-        </Name>
-        <Text>
-          {text}
-        </Text>
-      </TextWrapper>
-    </MessageWrapper>
-  )
-}
+const Message = ({ message: { displayName, text, photoURL }}: MessageType): JSX.Element => (
+  <MessageWrapper>
+    <AvatarWrapper>
+      <Avatar src={photoURL}
+              alt={'avatar'}
+      />
+    </AvatarWrapper>
+    <TextWrapper>
+      <Name>
+        {displayName}:
+      </Name>
+      <Text>
+        {text}
+      </Text>
+    </TextWrapper>
+  </MessageWrapper>
+)
 
 export default Message

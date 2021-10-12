@@ -25,7 +25,6 @@ const LoaderWrapper = styled.div`
 const App = (): JSX.Element => {
 
   const { auth } = useContext(FirebaseContext)
-
   const [loading] = useAuthState(auth)
 
   return (

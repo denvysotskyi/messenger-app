@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import Loader from '../components/loader/Loader'
 import Message from '../components/message/Message'
-import { Context } from '../context/context'
+import { FirebaseContext } from '../context/context'
 
 const ChatWrapper = styled.div`
   position: relative;
@@ -53,9 +53,9 @@ const MessageList = styled.ul`
   }
 `
 
-const ChatPage = () => {
+const ChatPage = (): JSX.Element => {
 
-  const { firebase, auth, firestore } = useContext(Context)
+  const { firebase, auth, firestore } = useContext(FirebaseContext)
   const [user] = useAuthState(auth)
 
   const [value, setValue] = useState('')
@@ -64,7 +64,7 @@ const ChatPage = () => {
     firestore.collection('messages').orderBy('createdAt')
   )
 
-  const sendMessage = async () => {
+  const sendMessage = async (): Promise<any> => {
     firestore.collection('messages').add({
       uid: user.uid,
       displayName: user.displayName,

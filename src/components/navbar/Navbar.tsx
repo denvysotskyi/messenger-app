@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useContext } from 'react'
-import { Context } from '../../context/context'
+import { FirebaseContext } from '../../context/context'
 
 const Nav = styled.nav`
 `
@@ -22,12 +22,12 @@ const LoginWrapper = styled.div`
   margin-right: 15px;
 `
 
-const Navbar = () => {
+const Navbar = (): JSX.Element => {
 
-  const { auth, firebase } = useContext(Context)
+  const { auth, firebase } = useContext(FirebaseContext)
   const [user] = useAuthState(auth)
 
-  const logout = () => firebase.auth().signOut()
+  const logout = (): void => firebase.auth().signOut()
 
   return (
     <Nav>
