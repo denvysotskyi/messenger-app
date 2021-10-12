@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import App from './components/app/App'
 import firebase from 'firebase/compat'
-import { Context } from './context/context'
+import { FirebaseContext } from './context/context'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -50,12 +50,12 @@ const firestore = firebase.firestore()
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     <GlobalStyle />
-    <Context.Provider value={{
+    <FirebaseContext.Provider value={{
       firebase,
       auth,
       firestore
     }}>
       <App />
-    </Context.Provider>
+    </FirebaseContext.Provider>
   </ThemeProvider>, document.getElementById('root')
 )

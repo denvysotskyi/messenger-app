@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import Loader from '../loader/Loader'
 import { useContext } from 'react'
-import { Context } from '../../context/context'
+import { FirebaseContext } from '../../context/context'
 
 const Main = styled.div`
   display: flex;
@@ -24,8 +24,9 @@ const LoaderWrapper = styled.div`
 
 const App = () => {
 
-  const { auth } = useContext(Context)
-  const [user, loading] = useAuthState(auth)
+  const { auth } = useContext(FirebaseContext)
+
+  const [loading] = useAuthState(auth)
 
   return (
     <Router>
