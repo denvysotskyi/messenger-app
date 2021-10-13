@@ -28,7 +28,7 @@ const Navbar = (): JSX.Element => {
   const { auth, firebase } = useContext(FirebaseContext)
   const [user] = useAuthState(auth)
 
-  const logout = (): void => firebase.auth().signOut()
+  const logout = (): Promise<typeof firebase.auth> => firebase.auth().signOut()
 
   return (
     <Nav>
