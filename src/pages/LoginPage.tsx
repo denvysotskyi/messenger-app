@@ -17,7 +17,7 @@ const LoginPage = (): JSX.Element => {
 
   const { auth, firebase } = useContext(FirebaseContext)
 
-  const login = async (): Promise<any> => {
+  const login = async (): Promise<typeof firebase.auth> => {
     const provider = new firebase.auth.GoogleAuthProvider()
     await auth.signInWithPopup(provider)
   }

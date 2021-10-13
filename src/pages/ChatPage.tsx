@@ -64,7 +64,7 @@ const ChatPage = (): JSX.Element => {
     firestore.collection('messages').orderBy('createdAt')
   )
 
-  const sendMessage = async (): Promise<any> => {
+  const sendMessage = async (): Promise<typeof firestore.collection> => {
     firestore.collection('messages').add({
       uid: user.uid,
       displayName: user.displayName,
